@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin-left: 20px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}

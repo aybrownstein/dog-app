@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog App</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <h1>Welcome to my Dog App</h1>
+    <h2>Please choose between 1 and 50 Dogs</h2>
+    <form>
+        <legend>what type of breed would you like to see?</legend>
+        <label>breed
+            <input type="text" placeholder="your breed" required>
+            <button type="submit">get pic</button>
+        </label>
+    </form>
+    <section class="results hidden">
+        <h2>Your Dogs!</h2>
+        <img class="selectedImg" alt="placeholder">
+    </section>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
