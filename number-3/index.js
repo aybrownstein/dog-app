@@ -1,24 +1,26 @@
 'use strict';
 
-function getDogImage() {
-    fetch('https://dog.ceo/api/breed/hound/images/random')
+function getDogImage(txt) {
+    fetch(`https://dog.ceo/api/breed/${txt}/images/random`)
         .then(response => response.json())
         .then(responseJson => displayResults(responseJson))
         .catch(error => alert('sorry, we are experiencing heavy volume. please try again later'));
 }
 
 function displayResults(responseJson) {
-    console.log(responseJson);
-    $('.selectedImg').replaceWith(
-        `<img src="${responseJson.message}" class="selectedImg">`
-    )
-    $(".results").removeClass('hidden');
+    $('.results').empty();
+    $('.results').removeClass('hidden');
+    responseJson.message.forEach((url) => {
+        console.log(url)
+        $('.results').append(`<img src="${url}" class="selectedImg">`)
+    });
 }
 
 function watchForm() {
     $('form').submit(event => {
         event.preventDefault();
-        getDogImage();
+        let txt = $('#input-txt').val();
+        getDogImage(txt);
     });
 }
 
