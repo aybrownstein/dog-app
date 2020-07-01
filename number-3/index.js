@@ -1,20 +1,21 @@
 'use strict';
 
 function getDogImage(txt) {
-    fetch(`https://dog.ceo/api/breed/${txt}/images/random`)
+    fetch(`https://dog.ceo/api/breed/${txt}/images/random `)
         .then(response => response.json())
         .then(responseJson => displayResults(responseJson))
-        .catch(error => alert('sorry, we are experiencing heavy volume. please try again later'));
+        .catch(error => alert('sorry, due to high volume we are currently not available. Please try again later.'));
+    s
+
 }
 
 function displayResults(responseJson) {
     $('.results').empty();
     $('.results').removeClass('hidden');
-    responseJson.message.forEach((url) => {
-        console.log(url)
-        $('.results').append(`<img src="${url}" class="selectedImg">`)
-    });
+    $('.results').append(`<img src="${responseJson.message}" class="selectedImg">`)
 }
+
+
 
 function watchForm() {
     $('form').submit(event => {

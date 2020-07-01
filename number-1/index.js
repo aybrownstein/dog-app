@@ -10,9 +10,11 @@ function displayResults(responseJson) {
 
     responseJson.message.forEach((url) => {
         console.log(url)
-
+        $('.results').append(`<img src="${url}">`)
     });
 }
+
+
 
 
 
