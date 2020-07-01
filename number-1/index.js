@@ -14,19 +14,15 @@ function displayResults(responseJson) {
     });
 }
 
-
-
-
-
 function watchForm() {
     $('form').submit(event => {
         event.preventDefault();
         let num = $('#input-num').val();
-        getDogImage();
+        getDogImage(num);
     });
 }
 
 $(function() {
-    console.log('app loaded!waiting for submit');
+    console.log('app loaded! waiting for submit');
     watchForm();
 });
